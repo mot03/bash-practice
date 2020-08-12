@@ -1,0 +1,1440 @@
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash case.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch arguments.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano arguments.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash arguments.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash arguments.sh hello world
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch argument_names.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm argument_names.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch argument-names.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano argument-names.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash argument-names.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash argument-names.sh hello
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash argument-names.sh hello world
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash argument-names.sh hello world 0 1 2
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano argument-names.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch cat-strings.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano cat-strings.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash cat-strings.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch substring.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano substring.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash substring.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano substring.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash substring.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+npm init
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+chmod +x substring.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash read.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js test
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js --test
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js --test
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js --test
+echo $PWD >> ~/project/test/.cwd
+history -a
+umask
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano .bashrc
+echo $PWD >> ~/project/test/.cwd
+history -a
+exie
+echo $PWD >> ~/project/test/.cwd
+history -a
+exit
+umask 777
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch test.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm test.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+chmod 777 test.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+exit
+umask 777
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano .bashrc
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch test1.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano .bashrc
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch test3.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano .bashrc
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch test4.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+exir
+echo $PWD >> ~/project/test/.cwd
+history -a
+exit
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch tests.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm test1.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm test2.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm test3.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm test4.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch test.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano .bashrc
+echo $PWD >> ~/project/test/.cwd
+history -a
+exit
+umask 000
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm test.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm tests.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch test.shs
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano .bashrc
+echo $PWD >> ~/project/test/.cwd
+history -a
+exit
+umask -1-1-1
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch tests.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd project/
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+setfacl --help
+echo $PWD >> ~/project/test/.cwd
+history -a
+setfac1
+echo $PWD >> ~/project/test/.cwd
+history -a
+setfacl
+echo $PWD >> ~/project/test/.cwd
+history -a
+man acl
+echo $PWD >> ~/project/test/.cwd
+history -a
+acl
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd project/
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano .bashrc
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd project/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+clear
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash --help
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+clear
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+clear
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+clear
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+touch add-two.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano add-two.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash add-two.sh
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+bash --help
+echo $PWD >> ~/project/test/.cwd
+history -a
+man bash
+echo $PWD >> ~/project/test/.cwd
+history -a
+man bash
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+clear
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+node index.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd /
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd var
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd log
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more alternatives.log
+echo $PWD >> ~/project/test/.cwd
+history -a
+vim alternatives.log
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd apt
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more history.log
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more lastlog
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+more wtmp
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd wtmp
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd sysstat/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ~
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+rm test.js
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .nn
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .n
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .nano/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd rb
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .rbenv/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+more .viminfo
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+more .profile
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .local/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd share/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd code-server/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd User/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd snippets/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd state/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .cashe
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .cache/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd typescript/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+more .gitconfig
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .g
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd .gem
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd specs/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd /
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd etc/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more nanorc
+echo $PWD >> ~/project/test/.cwd
+history -a
+vim nanorc
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano nanorc
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano nanorc
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd sysstat/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more stsstat
+echo $PWD >> ~/project/test/.cwd
+history -a
+more sys
+echo $PWD >> ~/project/test/.cwd
+history -a
+more sysstat
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more sysstat.ioconf
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd systemd
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more journald.conf
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd system
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+more user.conf
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd user
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd. .
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd. .
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd. .
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd home
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd bin
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+la -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd dev
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more stdin
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd proc
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd self
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more stat
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd task
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd 825/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more stat
+echo $PWD >> ~/project/test/.cwd
+history -a
+cwd
+echo $PWD >> ~/project/test/.cwd
+history -a
+more cwd
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more cmdline
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd /var/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd lib
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd misc
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ../systemd/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd catalog/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more data
+echo $PWD >> ~/project/test/.cwd
+history -a
+more database
+echo $PWD >> ~/project/test/.cwd
+history -a
+vim database
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd vim
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd opt
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd spool/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd cron/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd crontabs/
+echo $PWD >> ~/project/test/.cwd
+history -a
+sudo cd crontabs/
+echo $PWD >> ~/project/test/.cwd
+history -a
+sudo chmod 666 crontabs/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd crontabs/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+sudo chmod 777 crontabs/
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd crontabs/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd mail
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd exim4/
+echo $PWD >> ~/project/test/.cwd
+history -a
+chmod 777 exim4/
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd tmp
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd local
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ../lock
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -la
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd log
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+more btmp
+echo $PWD >> ~/project/test/.cwd
+history -a
+sudo vim btmp
+echo $PWD >> ~/project/test/.cwd
+history -a
+more dpkg.log
+echo $PWD >> ~/project/test/.cwd
+history -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+nano dpkg.log
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd mongodb/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto -a
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ..
+echo $PWD >> ~/project/test/.cwd
+history -a
+git status
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd ~
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
+cd project/
+echo $PWD >> ~/project/test/.cwd
+history -a
+ls --color=auto
+echo $PWD >> ~/project/test/.cwd
+history -a
