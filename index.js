@@ -50,20 +50,20 @@ async function getOutput() {
 getOutput();*/
 
 const util = require('util');
-const exec = require('child_process').spawn;
+const exec = require('child_process').exec;
 
 const getScriptOutput = async function(command) {
     // console.log(arguments);
     const script = await exec(command);
     const output = [];
-    console.log(script.stdio);
+
     script.stdout.on('data', function (data) { 
         //script.stdin.write('20\n');
         //script.stdin.write('30\n');
-        console.log(data);
+        //console.log(data);
         //console.log(output);
-        //output.push(data.toString());
-        //return output;
+        output.push(data.toString());
+        return output;
     });
 
     script.on('error', function (error) {
@@ -77,4 +77,9 @@ const getScriptOutput = async function(command) {
     // so script(filename, tom) should return -[enter your name:, hello, Tom]
 }
 
-getScriptOutput('bash add-two.sh');
+
+(async () => {
+  let test = await getScriptOutput('bash add-two.sh')
+  console.log(test);
+});
+

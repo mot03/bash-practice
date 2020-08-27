@@ -1,0 +1,22 @@
+#! /bin/bash
+
+NUMBER=$((RANDOM%75+1))
+
+echo $NUMBER
+
+if [[ $NUMBER -le 15 ]]
+then
+  echo B$NUMBER
+elif (( $NUMBER <= 30 ))
+then
+  echo I$NUMBER
+elif (( $NUMBER <= 45 ))
+then
+  echo N$NUMBER
+elif (( $NUMBER <= 60 ))
+then 
+  echo G$NUMBER
+else
+  echo O$NUMBER
+fi
+

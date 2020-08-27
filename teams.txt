@@ -1,0 +1,344 @@
+INSERT INTO teams (name) values
+('Albania'),
+('Algeria'),
+('Andorra'),
+('Angola'),
+('Argentina'),
+('Armenia'),
+('Aruba'),
+('Australia'),
+('Austria'),
+('Azerbaijan'),
+('Bahrain'),
+('Bangladesh'),
+('Belarus'),
+('Belgium'),
+('Benin'),
+('Bermuda'),
+('Bolivia'),
+('Bosnia and Herzegovina'),
+('Botswana'),
+('Brazil'),
+('Bulgaria'),
+('Burkina Faso'),
+('Burundi'),
+('Cambodia'),
+('Cameroon'),
+('Canada'),
+('Cape Verde'),
+('Chile'),
+('China'),
+('Colombia'),
+('Costa Rica'),
+('Croatia'),
+('Curaçao'),
+('Cyprus'),
+('Czech Republic'),
+('Denmark'),
+('Djibouti'),
+('Dominican Republic'),
+('DR Congo'),
+('Ecuador'),
+('Egypt'),
+('El Salvador'),
+('England'),
+('Estonia'),
+('Eswatini'),
+('Ethiopia'),
+('Faroe Islands'),
+('Fiji'),
+('Finland'),
+('France'),
+('Gabon'),
+('Gambia'),
+('Georgia'),
+('Germany'),
+('Ghana'),
+('Gibraltar'),
+('Greece'),
+('Guatemala'),
+('Guinea'),
+('Haiti'),
+('Honduras'),
+('Hong Kong'),
+('Hungary'),
+('Iceland'),
+('India'),
+('Indonesia'),
+('Iran'),
+('Iraq'),
+('Ireland'),
+('Israel'),
+('Italy'),
+('Ivory Coast'),
+('Jamaica'),
+('Japan'),
+('Jordan'),
+('Kazakhstan'),
+('Kenya'),
+('Kosovo'),
+('Kuwait'),
+('Kyrgyzstan'),
+('Laos'),
+('Latvia'),
+('Lebanon'),
+('Lesotho'),
+('Liberia'),
+('Libya'),
+('Liechtenstein'),
+('Lithuania'),
+('Luxembourg'),
+('Macao'),
+('Malawi'),
+('Malaysia'),
+('Maldives'),
+('Mali'),
+('Malta'),
+('Mauritania'),
+('Mauritius'),
+('Mexico'),
+('Moldova'),
+('Mongolia'),
+('Montenegro'),
+('Morocco'),
+('Mozambique'),
+('Myanmar'),
+('Namibia'),
+('Netherlands'),
+('New Zealand'),
+('Nicaragua'),
+('Niger'),
+('Nigeria'),
+('Northern Ireland'),
+('North Macedonia'),
+('Norway'),
+('Oman'),
+('Pakistan'),
+('Palestine'),
+('Panama'),
+('Paraguay'),
+('Peru'),
+('Philippines'),
+('Poland'),
+('Portugal'),
+('Qatar'),
+('Republic of the Congo'),
+('Réunion'),
+('Romania'),
+('Russia'),
+('Rwanda'),
+('San Marino'),
+('Saudi Arabia'),
+('Scotland'),
+('Senegal'),
+('Serbia'),
+('Seychelles'),
+('Sierra Leone'),
+('Singapore'),
+('Slovakia'),
+('Slovenia'),
+('Somalia'),
+('South Africa'),
+('South Korea'),
+('Spain'),
+('Sri Lanka'),
+('Sudan'),
+('Sweden'),
+('Switzerland'),
+('Syria'),
+('Taiwan'),
+('Tajikistan'),
+('Tanzania'),
+('Thailand'),
+('Togo'),
+('Trinidad and Tobago'),
+('Tunisia'),
+('Turkey'),
+('Turkmenistan'),
+('Uganda'),
+('Ukraine'),
+('United Arab Emirates'),
+('Uruguay'),
+('USA'),
+('Uzbekistan'),
+('Venezuela'),
+('Vietnam'),
+('Wales'),
+('Yemen'),
+('Zambia'),
+('Zimbabwe');
+
+
+
+
+ team_id |          name          
+---------+------------------------
+       1 | Albania
+       2 | Algeria
+       3 | Andorra
+       4 | Angola
+       5 | Argentina
+       6 | Armenia
+       7 | Aruba
+       8 | Australia
+       9 | Austria
+      10 | Azerbaijan
+      11 | Bahrain
+      12 | Bangladesh
+      13 | Belarus
+      14 | Belgium
+      15 | Benin
+      16 | Bermuda
+      17 | Bolivia
+      18 | Bosnia and Herzegovina
+      19 | Botswana
+      20 | Brazil
+      21 | Bulgaria
+      22 | Burkina Faso
+      23 | Burundi
+      24 | Cambodia
+      25 | Cameroon
+      26 | Canada
+      27 | Cape Verde
+      28 | Chile
+      29 | China
+      30 | Colombia
+      31 | Costa Rica
+      32 | Croatia
+      33 | Curaçao
+      34 | Cyprus
+      35 | Czech Republic
+      36 | Denmark
+      37 | Djibouti
+      38 | Dominican Republic
+      39 | DR Congo
+      40 | Ecuador
+      41 | Egypt
+      42 | El Salvador
+      43 | England
+      44 | Estonia
+      45 | Eswatini
+      46 | Ethiopia
+      47 | Faroe Islands
+      48 | Fiji
+      49 | Finland
+      50 | France
+      51 | Gabon
+      52 | Gambia
+      53 | Georgia
+      54 | Germany
+      55 | Ghana
+      56 | Gibraltar
+      57 | Greece
+      58 | Guatemala
+      59 | Guinea
+      60 | Haiti
+      61 | Honduras
+      62 | Hong Kong
+      63 | Hungary
+      64 | Iceland
+      65 | India
+      66 | Indonesia
+      67 | Iran
+      68 | Iraq
+      69 | Ireland
+      70 | Israel
+      71 | Italy
+      72 | Ivory Coast
+      73 | Jamaica
+      74 | Japan
+      75 | Jordan
+      76 | Kazakhstan
+      77 | Kenya
+      78 | Kosovo
+      79 | Kuwait
+      80 | Kyrgyzstan
+      81 | Laos
+      82 | Latvia
+      83 | Lebanon
+      84 | Lesotho
+      85 | Liberia
+      86 | Libya
+      87 | Liechtenstein
+      88 | Lithuania
+      89 | Luxembourg
+      90 | Macao
+      91 | Malawi
+      92 | Malaysia
+      93 | Maldives
+      94 | Mali
+      95 | Malta
+      96 | Mauritania
+      97 | Mauritius
+      98 | Mexico
+      99 | Moldova
+     100 | Mongolia
+     101 | Montenegro
+     102 | Morocco
+     103 | Mozambique
+     104 | Myanmar
+     105 | Namibia
+     106 | Netherlands
+     107 | New Zealand
+     108 | Nicaragua
+     109 | Niger
+     110 | Nigeria
+     111 | Northern Ireland
+     112 | North Macedonia
+     113 | Norway
+     114 | Oman
+     115 | Pakistan
+     116 | Palestine
+     117 | Panama
+     118 | Paraguay
+     119 | Peru
+     120 | Philippines
+     121 | Poland
+     122 | Portugal
+     123 | Qatar
+     124 | Republic of the Congo
+     125 | Réunion
+     126 | Romania
+     127 | Russia
+     128 | Rwanda
+     129 | San Marino
+     130 | Saudi Arabia
+     131 | Scotland
+     132 | Senegal
+     133 | Serbia
+     134 | Seychelles
+     135 | Sierra Leone
+     136 | Singapore
+     137 | Slovakia
+     138 | Slovenia
+     139 | Somalia
+     140 | South Africa
+     141 | South Korea
+     142 | Spain
+     143 | Sri Lanka
+     144 | Sudan
+     145 | Sweden
+     146 | Switzerland
+     147 | Syria
+     148 | Taiwan
+     149 | Tajikistan
+     150 | Tanzania
+     151 | Thailand
+     152 | Togo
+     153 | Trinidad and Tobago
+     154 | Tunisia
+     155 | Turkey
+     156 | Turkmenistan
+     157 | Uganda
+     158 | Ukraine
+     159 | United Arab Emirates
+     160 | Uruguay
+     161 | USA
+     162 | Uzbekistan
+     163 | Venezuela
+     164 | Vietnam
+     165 | Wales
+     166 | Yemen
+     167 | Zambia
+     168 | Zimbabwe
+(168 rows)
