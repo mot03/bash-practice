@@ -1,38 +1,66 @@
 #! /bin/bash
 
+########## Psql connection
 USERNAME=freecodecamp
 DATABASE=bikes
 QUERY="psql -U $USERNAME $DATABASE -t -c"
 
+########## PostgreSQL CRUD functions
 GET_AVAILABLE_BIKES() {
   echo "`$QUERY "SELECT bike_id, type, size FROM bikes WHERE available=TRUE"`"
 }
 
-# argument $1 is a phone number
 GET_CUSTOMER_NAME() {
+  # argument $1 is a phone number
   echo "`$QUERY "SELECT name FROM customers WHERE phone='$1';"`"
 }
 
-# argument $1 is a name
-# argument $2 is a phone number
 ADD_CUSTOMER() {
+  # argument $1 is a name
+  # argument $2 is a phone number
   echo "`$QUERY "INSERT INTO customers (name, phone) values ('$1', '$2');"`"
 }
 
-# argument $1 is a phone number
-# argument $2 is a bike_id
 RENT_BIKE() {
+  # argument $1 is a phone number
+  # argument $2 is a bike_id
+
   # get customer_id
   CUSTOMER_ID="`$QUERY "SELECT customer_id from customers WHERE phone='$1';"`"
 
   # insert rental for customer
-  echo "`$QUERY "INSERT INTO rentals (customer_id, bike_id) values ($CUSTOMER_ID, $2);"`"
+  INSERT_RENTAL_RESULT="`$QUERY "INSERT INTO rentals (customer_id, bike_id) values ($CUSTOMER_ID, $2);"`"
+
+  if [[ $INSERT_RENTAL_RESULT == "INSERT 0 1" ]]
+  then
+    # set available to false
+    UPDATE_BIKE_AVAILABLE_RESULT="`$QUERY "UPDATE bikes SET available=false WHERE bike_id=$2;"`"
+
+    # bike was successfully updated
+    if [[ $UPDATE_BIKE_AVAILABLE_RESULT == "UPDATE 0 1" ]]
+    then
+      GET_BIKE_INFO_RESULT="`$QUERY "SELECT type, size FROM bikes WHERE bike_id=$2;"`"
+    fi
+  fi
+  echo "$GET_BIKE_INFO_RESULT"
+}
+
+SHOW_TITLE() {
+	clear
+	echo "~~~~~~~~~~~~~~~~"	
+	echo "BIKE RENTAL SHOP"
+	echo "~~~~~~~~~~~~~~~~"
 }
 
 # Start of the user interface
-echo -e "\nHow can I help you?\n"
-echo -e "1. Rent a bike\n2. Return a bike"
-read MENU1
+MAIN_MENU() {
+  SHOW_TITLE
+  echo -e "\nHow can I help you?\n"
+  echo -e "1. Rent a bike\n2. Return a bike"
+  read MENU1
+}
+
+MAIN_MENU
 
 if [[ $MENU1 == 1 ]];
 then
@@ -67,10 +95,8 @@ then
 
       RENT_BIKE_RESULT=$(RENT_BIKE $PHONE_NUMBER $BIKE_ID_TO_RENT);
 
-      if [[ $RENT_BIKE_RESULT == "INSERT 0 1" ]]
-      then 
-        echo "I have put you down for the 27\" mountain bike"
-      fi
+      echo "I have put you down for the $RENT_BIKE_RESULT"
+
     else
       echo "Something went wrong"
     fi
@@ -78,17 +104,6 @@ then
   else
     echo "Hello, $NAME"
   fi
-  
-  # If exists, tell them thank you
-
-  # If not exists, get there name and add them to the database
-
-
-
-
-
-
-
 
 elif [[ $MENU1 == 2 ]]
 
