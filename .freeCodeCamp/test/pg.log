@@ -1,0 +1,934 @@
+ LOG:  database system was shut down at 2020-08-05 17:28:08 CEST
+ LOG:  database system is ready to accept connections
+[unknown] LOG:  connection received: host=[local]
+[unknown] LOG:  connection received: host=[local]
+postgres LOG:  connection authorized: user=postgres database=template1 application_name=psql
+postgres LOG:  statement: 
+[unknown] LOG:  connection received: host=[local]
+postgres LOG:  connection authorized: user=postgres database=template1 application_name=psql
+postgres LOG:  statement: 
+[unknown] LOG:  connection received: host=[local]
+postgres LOG:  connection authorized: user=postgres database=template1 application_name=psql
+postgres LOG:  statement: 
+[unknown] LOG:  connection received: host=[local]
+postgres LOG:  connection authorized: user=postgres database=postgres application_name=psql
+postgres LOG:  statement: CREATE USER freecodecamp WITH CREATEDB;
+[unknown] LOG:  connection received: host=[local]
+postgres LOG:  connection authorized: user=postgres database=postgres application_name=psql
+postgres LOG:  statement: SET statement_timeout = 0;
+postgres LOG:  statement: SET lock_timeout = 0;
+postgres LOG:  statement: SET idle_in_transaction_session_timeout = 0;
+postgres LOG:  statement: SET client_encoding = 'UTF8';
+postgres LOG:  statement: SET standard_conforming_strings = on;
+postgres LOG:  statement: SELECT pg_catalog.set_config('search_path', '', false);
+postgres LOG:  statement: SET check_function_bodies = false;
+postgres LOG:  statement: SET xmloption = content;
+postgres LOG:  statement: SET client_min_messages = warning;
+postgres LOG:  statement: SET row_security = off;
+postgres LOG:  statement: DROP DATABASE bikes;
+postgres ERROR:  database "bikes" does not exist
+postgres STATEMENT:  DROP DATABASE bikes;
+postgres LOG:  statement: CREATE DATABASE bikes WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'C.UTF-8' LC_CTYPE = 'C.UTF-8';
+postgres LOG:  statement: ALTER DATABASE bikes OWNER TO freecodecamp;
+[unknown] LOG:  connection received: host=[local]
+postgres LOG:  connection authorized: user=postgres database=bikes application_name=psql
+postgres LOG:  statement: SET statement_timeout = 0;
+postgres LOG:  statement: SET lock_timeout = 0;
+postgres LOG:  statement: SET idle_in_transaction_session_timeout = 0;
+postgres LOG:  statement: SET client_encoding = 'UTF8';
+postgres LOG:  statement: SET standard_conforming_strings = on;
+postgres LOG:  statement: SELECT pg_catalog.set_config('search_path', '', false);
+postgres LOG:  statement: SET check_function_bodies = false;
+postgres LOG:  statement: SET xmloption = content;
+postgres LOG:  statement: SET client_min_messages = warning;
+postgres LOG:  statement: SET row_security = off;
+postgres LOG:  statement: SET default_tablespace = '';
+postgres LOG:  statement: SET default_table_access_method = heap;
+postgres LOG:  statement: CREATE TABLE public.bikes (
+	    bike_id integer NOT NULL,
+	    type character varying(50) NOT NULL,
+	    size integer,
+	    available boolean
+	);
+postgres LOG:  statement: ALTER TABLE public.bikes OWNER TO freecodecamp;
+postgres LOG:  statement: CREATE SEQUENCE public.bikes_bike_id_seq
+	    AS integer
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+postgres LOG:  statement: ALTER TABLE public.bikes_bike_id_seq OWNER TO freecodecamp;
+postgres LOG:  statement: ALTER SEQUENCE public.bikes_bike_id_seq OWNED BY public.bikes.bike_id;
+postgres LOG:  statement: CREATE TABLE public.customers (
+	    customer_id integer NOT NULL,
+	    phone character varying(15),
+	    name character varying(40)
+	);
+postgres LOG:  statement: ALTER TABLE public.customers OWNER TO freecodecamp;
+postgres LOG:  statement: CREATE SEQUENCE public.customers_customer_id_seq
+	    AS integer
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+postgres LOG:  statement: ALTER TABLE public.customers_customer_id_seq OWNER TO freecodecamp;
+postgres LOG:  statement: ALTER SEQUENCE public.customers_customer_id_seq OWNED BY public.customers.customer_id;
+postgres LOG:  statement: CREATE TABLE public.rentals (
+	    rental_id integer NOT NULL,
+	    customer_id integer NOT NULL,
+	    bike_id integer NOT NULL,
+	    date_rented date DEFAULT now() NOT NULL,
+	    date_returned date
+	);
+postgres LOG:  statement: ALTER TABLE public.rentals OWNER TO freecodecamp;
+postgres LOG:  statement: CREATE SEQUENCE public.rentals_rental_id_seq
+	    AS integer
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+postgres LOG:  statement: ALTER TABLE public.rentals_rental_id_seq OWNER TO freecodecamp;
+postgres LOG:  statement: ALTER SEQUENCE public.rentals_rental_id_seq OWNED BY public.rentals.rental_id;
+postgres LOG:  statement: ALTER TABLE ONLY public.bikes ALTER COLUMN bike_id SET DEFAULT nextval('public.bikes_bike_id_seq'::regclass);
+postgres LOG:  statement: ALTER TABLE ONLY public.customers ALTER COLUMN customer_id SET DEFAULT nextval('public.customers_customer_id_seq'::regclass);
+postgres LOG:  statement: ALTER TABLE ONLY public.rentals ALTER COLUMN rental_id SET DEFAULT nextval('public.rentals_rental_id_seq'::regclass);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (1, 'Mountain', 27, true);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (2, 'Mountain', 28, true);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (3, 'Mountain', 29, true);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (4, 'Road', 27, true);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (5, 'Road', 28, true);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (6, 'Road', 29, true);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (7, 'BMX', 19, true);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (8, 'BMX', 20, true);
+postgres LOG:  statement: INSERT INTO public.bikes VALUES (9, 'BMX', 21, true);
+postgres LOG:  statement: SELECT pg_catalog.setval('public.bikes_bike_id_seq', 9, true);
+postgres LOG:  statement: SELECT pg_catalog.setval('public.customers_customer_id_seq', 1, false);
+postgres LOG:  statement: SELECT pg_catalog.setval('public.rentals_rental_id_seq', 1, false);
+postgres LOG:  statement: ALTER TABLE ONLY public.bikes
+	    ADD CONSTRAINT bikes_bike_id_key UNIQUE (bike_id);
+postgres LOG:  statement: ALTER TABLE ONLY public.customers
+	    ADD CONSTRAINT customers_customer_id_key UNIQUE (customer_id);
+postgres LOG:  statement: ALTER TABLE ONLY public.customers
+	    ADD CONSTRAINT customers_phone_key UNIQUE (phone);
+postgres LOG:  statement: ALTER TABLE ONLY public.rentals
+	    ADD CONSTRAINT rentals_rental_id_key UNIQUE (rental_id);
+postgres LOG:  statement: ALTER TABLE ONLY public.rentals
+	    ADD CONSTRAINT rentals_bike_id_fkey FOREIGN KEY (bike_id) REFERENCES public.bikes(bike_id);
+postgres LOG:  statement: ALTER TABLE ONLY public.rentals
+	    ADD CONSTRAINT rentals_customer_id_fkey FOREIGN KEY (customer_id) REFERENCES public.customers(customer_id);
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=postgres application_name=psql
+freecodecamp LOG:  statement: SELECT d.datname as "Name",
+	       pg_catalog.pg_get_userbyid(d.datdba) as "Owner",
+	       pg_catalog.pg_encoding_to_char(d.encoding) as "Encoding",
+	       d.datcollate as "Collate",
+	       d.datctype as "Ctype",
+	       pg_catalog.array_to_string(d.datacl, E'\n') AS "Access privileges"
+	FROM pg_catalog.pg_database d
+	ORDER BY 1;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT n.nspname as "Schema",
+	  c.relname as "Name",
+	  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 's' THEN 'special' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as "Type",
+	  pg_catalog.pg_get_userbyid(c.relowner) as "Owner"
+	FROM pg_catalog.pg_class c
+	     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+	WHERE c.relkind IN ('r','p','v','m','S','f','')
+	      AND n.nspname <> 'pg_catalog'
+	      AND n.nspname <> 'information_schema'
+	      AND n.nspname !~ '^pg_toast'
+	  AND pg_catalog.pg_table_is_visible(c.oid)
+	ORDER BY 1,2;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='1234567';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='1234567';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(Border, style)
+freecodecamp ERROR:  column "border" does not exist at character 50
+freecodecamp STATEMENT:  INSERT INTO rentals(customer_id, bike_id) values(Border, style)
+freecodecamp LOG:  statement: select * from customers;
+freecodecamp LOG:  statement: select * from rebtaks;
+freecodecamp ERROR:  relation "rebtaks" does not exist at character 15
+freecodecamp STATEMENT:  select * from rebtaks;
+freecodecamp LOG:  statement: select * from rentals;
+freecodecamp LOG:  statement: select * from bikes;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=10
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(Border, style)
+freecodecamp ERROR:  column "border" does not exist at character 50
+freecodecamp STATEMENT:  INSERT INTO rentals(customer_id, bike_id) values(Border, style)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=exit
+freecodecamp ERROR:  column "exit" does not exist at character 43
+freecodecamp STATEMENT:  SELECT available FROM bikes WHERE bike_id=exit
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=10
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO customers(name, phone) values('tom', '123');
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 9)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 2)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 6)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=6
+freecodecamp LOG:  statement: select * from rentals
+	;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=5
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=7
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='321';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO customers(name, phone) values('mot', '321');
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='321';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(2, 7)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=7
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=7
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=7
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='321' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=10
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+freecodecamp LOG:  statement: SELECT n.nspname as "Schema",
+	  c.relname as "Name",
+	  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 's' THEN 'special' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as "Type",
+	  pg_catalog.pg_get_userbyid(c.relowner) as "Owner"
+	FROM pg_catalog.pg_class c
+	     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+	WHERE c.relkind IN ('r','p','v','m','S','f','')
+	      AND n.nspname <> 'pg_catalog'
+	      AND n.nspname <> 'information_schema'
+	      AND n.nspname !~ '^pg_toast'
+	  AND pg_catalog.pg_table_is_visible(c.oid)
+	ORDER BY 1,2;
+freecodecamp LOG:  statement: select * from rentals;
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=6;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=1;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=1;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=6;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 1)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 2)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 3)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=4;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=0;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=1;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=1
+freecodecamp LOG:  statement: select * from rentals;
+freecodecamp LOG:  statement: SELECT bike_id FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=6;
+freecodecamp LOG:  statement: SELECT bike_id FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=2;
+freecodecamp LOG:  statement: SELECT bike_id FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=10;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=1;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=2;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=1;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=3;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+freecodecamp LOG:  statement: select * from rentals;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 1)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 3)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=4
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 4)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=4
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=4
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=4
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=5
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 5)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=5
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=5
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=5
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=8
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 8)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=8
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=8
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=8
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 6)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=6
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 9)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=9
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='1244' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='1234' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+freecodecamp LOG:  statement: select * from rentals;
+freecodecamp LOG:  statement: select * from bikes;
+freecodecamp LOG:  statement: update bikes set available='t' where available='f';
+freecodecamp LOG:  statement: select * from customers;
+freecodecamp LOG:  statement: select * from rentals;
+freecodecamp ERROR:  syntax error at or near "ecustomer_id" at character 26
+freecodecamp STATEMENT:  delete from rentals wher ecustomer_id=1;
+freecodecamp LOG:  statement: delete from rentals where customer_id=1;
+freecodecamp LOG:  statement: delete from rentals where customer_id=2;
+freecodecamp LOG:  statement: select * from rentals;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 1)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 2)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 3)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=3
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=4
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=2;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=4;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=4
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=4;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='123' AND date_returned is null;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='123' AND date_returned is null AND bike_id=1;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE rentals SET date_returned=now() WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=true WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 1)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=1
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT available FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT name FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT customer_id FROM customers WHERE phone='123';
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: INSERT INTO rentals(customer_id, bike_id) values(1, 2)
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: UPDATE bikes SET available=false WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT type FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT size FROM bikes WHERE bike_id=2
+[unknown] LOG:  connection received: host=[local]
+freecodecamp LOG:  connection authorized: user=freecodecamp database=bikes application_name=psql
+freecodecamp LOG:  statement: SELECT bike_id, type, size FROM bikes WHERE available=TRUE ORDER BY type;

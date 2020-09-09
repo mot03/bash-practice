@@ -42,6 +42,10 @@ GET_CUSTOMER_RENTALS() {
   echo "`$CONNECT "SELECT bikes.bike_id, type, size FROM bikes LEFT OUTER JOIN rentals ON bikes.bike_id = rentals.bike_id LEFT OUTER JOIN customers ON customers.customer_id = rentals.customer_id WHERE phone='$1' AND date_returned is null;"`"
 }
 
+CHECK_IF_CUSTOMER_HAS_BIKE() {
+  echo "`$CONNECT "SELECT * FROM rentals LEFT OUTER JOIN customers ON rentals.customer_id = customers.customer_id WHERE phone='$1' AND date_returned is null AND bike_id=$2;"`"
+}
+
 RETURN_BIKE() {
   echo "`$CONNECT "UPDATE rentals SET date_returned=now() WHERE bike_id=$1"`"
 }
@@ -151,28 +155,36 @@ RETURN_MENU() {
 
   if [[ -z $GET_CUSTOMER_RENTALS_RESULT ]]
   then
-    echo "I could not find any rentals for that phone number."
+    MAIN_MENU "I could not find any rentals for that phone number."
   else
     echo -e "\nWhich bike would you like to return?"
     echo "$GET_CUSTOMER_RENTALS_RESULT"
 
     read BIKE_ID_TO_RETURN
 
-    # Need to check if input is a bike the customer actually has rented
+    # check if bike_id_to_return matches customer_id in rentals
+    CHECK_IF_CUSTOMER_HAS_BIKE_RESULT=$(CHECK_IF_CUSTOMER_HAS_BIKE $PHONE_NUMBER $BIKE_ID_TO_RETURN)
 
-    RETURN_BIKE_RESULT=$(RETURN_BIKE $BIKE_ID_TO_RETURN )
-    if [[ $RETURN_BIKE_RESULT != "UPDATE 1" ]]
+    if [[ -z $CHECK_IF_CUSTOMER_HAS_BIKE_RESULT ]]
     then
-      MAIN_MENU "I could not find that bike."
-
+      echo "You do not have that bike."
     else
-      UPDATE_AVAILABILITY_RESULT=$(UPDATE_BIKE_AVAILABILITY $BIKE_ID_TO_RETURN true)
 
-      if [[ $UPDATE_AVAILABILITY_RESULT != "UPDATE 1" ]]
+      RETURN_BIKE_RESULT=$(RETURN_BIKE $BIKE_ID_TO_RETURN )
+
+      if [[ $RETURN_BIKE_RESULT != "UPDATE 1" ]]
       then
-        MAIN_MENU "Could not update the bike availability."
+        echo "I could not find that bike."
+
       else
-        MAIN_MENU "Thank you for returning your bike."
+        UPDATE_AVAILABILITY_RESULT=$(UPDATE_BIKE_AVAILABILITY $BIKE_ID_TO_RETURN true)
+
+        if [[ $UPDATE_AVAILABILITY_RESULT != "UPDATE 1" ]]
+        then
+          echo "Could not update the bike availability."
+        else
+          echo "Thank you for returning your bike."
+        fi
       fi
     fi
   fi
